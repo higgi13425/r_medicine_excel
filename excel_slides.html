@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>How to Make the Best of Excel</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Peter Higgins" />
+    <meta name="date" content="2021-01-27" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# How to Make the Best of Excel
+### Peter Higgins
+### 2021-01-27
+
+---
+
+
+
+
+
+
+# Excel is Easy
+
+.pull-left[
+Just open it up and type in your data!
+
+![](https://media.giphy.com/media/hOzfvZynn9AK4/giphy.gif)
+]
+
+--
+
+.pull-right[
+But that doesn't produce&lt;br&gt;
+good outcomes.
+
+&lt;img src="images/organize_posse.jpg" width="80%" /&gt;
+
+
+]
+---
+
+# Excel is Everywhere
+
+.pull-left[
+Designed to help small businesses.&lt;br&gt;
+It can do: &lt;br&gt;
+
+- Data Entry
+- Database
+- Calculations
+- Data Visualization&lt;br&gt;
+
+All in one!
+
+&lt;img src="images/swiss_army_knife.jpg" width="80%" /&gt;
+]
+
+--
+
+.pull-right[
+But it is not **great** at any of these.&lt;br&gt;
+So it might not be the right tool for _your_ job.
+
+&lt;img src="images/tools.jpg" width="90%" /&gt;
+]
+
+---
+class: inverse, center, middle
+
+# What Kinds of Tools Do You _Actually_ Need for Medical Research Data Management?
+
+---
+
+# The Wish List
+
+- Data Entry
+- Hard to over-write data by mistake
+- Data Validation (type, range)
+- Data Security (PHI)
+- Good for Collaboration (audit trail)
+- Easy to Analyze
+- Data Analysis is Reproducible
+- Errors are Obvious &amp; Easy to Detect
+
+---
+
+# The Reality
+
+- Excel is designed for small data (small businesses) 
+  and it does not scale well - it fails with big data
+
+- Excel is filled with compromises
+- It is very easy to over-write data
+- You can type anything into a cell (wrong data type, typos)
+
+- It is very easy to over-write formulas
+- Formulas are hidden (good for printing, bad for checking)
+
+- Structure encourages very wide data (left-to-right)
+  - but is actually designed for very tall data &lt;br&gt;
+  (16,384 columns, 1 million+ rows maximum)
+ 
+- Many tools on the web to open pwd-protected Excel files
+ 
+- Excel fails *silently*
+
+---
+
+# The Horror Stories
+
+- In 2020, the UK COVID tracing program "lost" tens of thousands of COVID cases when Excel ran out of columns each day.
+  - Someone eventually noticed exactly 16,384 cases **every** day.
+  
+--
+
+- 88% of forensically examined business spreadsheets contain errors.
+- More than 20% of gene datasets submitted with scientific datasets contain errors.
+
+--
+
+- Silent miscalculation in a spreadsheet in 2012 led to loss of &gt; 2B dollars by JP Morgan - an error from manual point-and-click manipulation of spreadsheets.
+
+--
+
+- Excel so often "helpfully" renames human gene names as dates that in 2020, the HUGO Gene Nomenclature Committee chose to rename 27 genes because Excel was unfixable.
+
+--
+
+- There is a whole website and annual conference devoted to spreadsheet horror stories and associated business risks.&lt;br&gt;
+http://www.eusprig.org/horror-stories.htm
+
+---
+
+# The Alternatives
+
+- Secure Data Entry with REDCap
+  - free, universal, HIPAA-compliant, backed up
+  - but learning curve !
+  - free learning resources
+  - invest in yourself and your career
+
+&lt;img src="images/redcap_map.png" width="60%" /&gt;
+
+---
+class: inverse
+
+# The Alternatives
+
+- Data Analysis - R
+- Graphics - R
+- Reporting - R
+
+with open-source languages like R for free
+  - but learning curve !
+  - free learning resources
+  - invest in yourself and your career
+
+&lt;img src="images/r_symbol.jpg" width="30%" /&gt;
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
